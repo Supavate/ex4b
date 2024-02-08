@@ -38,8 +38,8 @@
 			  var t = $('#temp').val();//celsius
 			  var u = $('#unit').val();	   
 				validate(t);
-				var result = conversion(u,t);
-			  alert("Temperature is " + result.t1 + " in " + result.u1);
+				var result = document.getElementById('result');
+			  result.innerHTML = conversion(u,t);
 			});
 		});
 
@@ -69,7 +69,8 @@
 				t1 = t * (4/5);
 				u1 = "Kelvin";
 			}
-			return {"u1":u1,"t1":t1};
+			var msg = ("Temperature is " + t1 + " in " + u1);
+			return msg;
 		}
 	</script>
 </body>
